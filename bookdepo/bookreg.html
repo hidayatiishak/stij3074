@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<script>
+  function previewFile() {
+    const preview = document.querySelector('img');
+    const file = document.querySelector('input[type=file]').files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+      // convert image file to base64 string
+      preview.src = reader.result;
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+</script>
+
+<body>
+
+  <h2 align="center">Books Registration</h2>
+
+  <form action="registerbook.php" method="post" align="center"
+    onsubmit="return confirm('Are you sure you want to add books?');">
+    
+
+    <label for="id">Book Id:</label><br>
+    <input type="text" id="id" name="id" value="" required><br>
+
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name=title" value="" required><br>
+
+    <label for="author">Author:</label><br>
+    <input type="text" id="author" name="author" value="" required><br>
+
+    <label for="price">Price</label><br>
+    <input type="text" id="price name="price" value="" required><br>
+
+
+    <label for="description">Description:</label><br>
+    <input type="descriptionr" id="description" name="description" value="" required><br><br>
+
+
+    <label for="publisher">Publisher:</label><br>
+    <input type="publisher" id="publisher" name="publisher" value="" required><br><br>
+
+  
+    <label for="isbn">ISBN:</label><br>
+    <input type="isbn" id="isbn" name="isbn" value="" required><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+  <p align="center"><a href="index.html">Already register? Login</a></p>
+
+</body>
+
+</html>
